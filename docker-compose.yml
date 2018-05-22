@@ -1,0 +1,22 @@
+version: '3'
+services:
+  formapp:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    networks:
+      - formulario
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - formulario
+networks:
+    formulario: 
