@@ -18,5 +18,7 @@ services:
       - 27017:27017
     networks:
       - formulario
+    volumes:
+      - /opt/mongo/:/opt/mongo/
 networks:
     formulario: 
